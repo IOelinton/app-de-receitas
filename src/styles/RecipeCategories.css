@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    font-family: Roboto Condesed, sans-serif;
+}
+
+.recipe-catergories {
+    text-align: center;
+}
+
+.categories-card {
+    text-align: center;
+    border-left: 1px solid #ccc;
+    padding: 5px;
+
+}
+
+.categories-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.categories-card img {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+/* Estilos para o carrossel */
+.slick-prev,
+.slick-next {
+    z-index: 1;
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #333;
+}
+
+.slick-dots {
+    bottom: -40px;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .slick-prev {
+        left: -15px;
+    }
+
+    .slick-next {
+        right: -15px;
+    }
+}

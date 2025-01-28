@@ -1,0 +1,68 @@
+.Headpage {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.headepage-left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.headepage-left h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.headepage-left p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #93959F;
+}
+
+.headpage-buttons-area {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+
+.headepage-left button {
+    background-color: #DB4B6A;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.headepage-left button:last-child {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.headepage-left button:hover {
+    background-color: #C89486;
+    transition: all 0.3s ease-in-out;
+}
+
+.headepage-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headepage-right img {
+    width: 100%;
+    height: 100%;
+}
