@@ -100,14 +100,17 @@
 .recipes_area {
     background-color: #393942;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .recipes_area__card {
     height: 200px;
-    width: 80%;
     margin: auto;
-    margin-top: 20px;
     cursor: pointer;
+    max-width: 75%;
+    margin-top: 1.5rem;
 }
 
 .recipes_area__card:hover {

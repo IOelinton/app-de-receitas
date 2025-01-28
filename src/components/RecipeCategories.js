@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../styles/RecipeCategories.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 export const RecipeCategories = () => {
+  const navigate = useNavigate();
+
   const [categories, setCategories] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [recipe, setRecipe] = useState([]);
 
-  const [showRecipe, setShowRecipe] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -46,25 +50,14 @@ export const RecipeCategories = () => {
     }
   };
 
-  const getRecipe = async (e) => {
-    const BASE_URL_RECIPE = `https://www.themealdb.com/api/json/v1/1/search.php?s=${e.target.id}`;
-    try {
-      const response = await fetch(BASE_URL_RECIPE);
-      if (!response.ok) {
-        throw new Error(`Erro: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log(e.target.id);
-      setRecipe(data.meals);
-      console.log(data.meals);
-      setShowRecipe(true);
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const UnshowRecipe = () => {
-    setShowRecipe(false);
+  const handleRedirect = (e) => {
+    const myRecipe = e.target.id;
+    console.log(myRecipe);
+    navigate("/recipe", {
+      state: {
+        myRecipe,
+      },
+    });
   };
 
   useEffect(() => {
@@ -145,25 +138,16 @@ export const RecipeCategories = () => {
                     alt={recipe.strMeal}
                     className="recipes_area__card__img"
                     id={recipe.strMeal}
-                    onClick={getRecipe}
+                    onClick={handleRedirect}
                   />
                   <h3
                     className="recipes_area__card__title"
                     id={recipe.strMeal}
-                    onClick={getRecipe}
+                    onClick={handleRedirect}
                   >
                     {recipe.strMeal}
                   </h3>
                 </div>
-
-                {showRecipe && recipe && (
-                  <div className="modal">
-                    <button className="close" onClick={UnshowRecipe}>
-                      X
-                    </button>
-                    <h2>Aqui tem um modal</h2>
-                  </div>
-                )}
               </>
             ))}
           </div>
