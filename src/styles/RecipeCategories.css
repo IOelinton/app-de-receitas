@@ -1,60 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
 * {
-    font-family: Roboto Condesed, sans-serif;
+    font-family: "Outfit", serif;
 }
 
-.recipe-catergories {
-    text-align: center;
+/* .recipe-categories {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.recipe-search__container {
+    background-color: #393942;
+    color: white;
+} */
+
+.recipe_search__categories {
+    padding: 20px 0;
 }
 
 .categories-card {
+    border-radius: 10px;
     text-align: center;
-    border-left: 1px solid #ccc;
-    padding: 5px;
+    border: 2px solid #ccc;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
+.categories-card:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
 }
 
 .categories-card h3 {
     font-size: 1.2rem;
+    padding: 1rem 0;
     font-weight: 600;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+
+    font-family: "Outfit", serif;
 }
 
 .categories-card img {
+    object-fit: fill;
     width: 100%;
-    max-width: 200px;
+    width: 150px;
     height: 150px;
-    height: auto;
     object-fit: cover;
-    border-radius: 10px;
-    margin: 0 auto;
+    border-radius: 8px;
 }
 
-/* Estilos para o carrossel */
-.slick-prev,
-.slick-next {
-    z-index: 1;
+/* Estilos personalizados para o carrossel */
+.carousel-container {
+    padding: 20px 0;
 }
 
-.slick-prev {
-    left: -25px;
+.custom-dot-list-style {
+    margin-top: 20px;
 }
 
-.slick-next {
-    right: -25px;
+.custom-dot-list-style button {
+    border: none;
+    background: #ddd;
 }
 
-.slick-prev:before,
-.slick-next:before {
-    color: #333;
+.custom-dot-list-style .react-multi-carousel-dot--active button {
+    background: #DB4B6A;
 }
 
-.slick-dots {
-    bottom: -40px;
+.react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
 }
 
-/* Ajustes para responsividade */
+/* Estilização das setas de navegação */
+.react-multiple-carousel__arrow {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.react-multiple-carousel__arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.react-multiple-carousel__arrow--left {
+    left: 10px;
+}
+
+.react-multiple-carousel__arrow--right {
+    right: 10px;
+}
+
+.recipes_area {
+    background-color: #393942;
+    width: 100%;
+}
+
+.recipes_area__card {
+    height: 200px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.recipes_area__card:hover {
+    transform: scale(1.05);
+    filter: opacity(90%);
+    transition: transform 0.3s ease;
+}
+
+.recipes_area__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipes_area__card h3 {
+    font-family: "Outfit", serif;
+    position: relative;
+    top: -53px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     .slick-prev {
         left: -15px;
@@ -62,5 +142,30 @@
 
     .slick-next {
         right: -15px;
+    }
+
+    .categories-card {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .categories-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .categories-card h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-categories {
+        padding: 20px 10px;
+    }
+
+    .categories-card img {
+        width: 100px;
+        height: 100px;
     }
 }

@@ -1,14 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 .Headpage {
-    background-color: black;
-    color: white;
+    font-family: "Outfit", serif;
+    background-color: #393942;
+    padding: 1rem 0;
+}
+
+.important-word {
+    color: #DB4B6A;
+}
+
+.Headpage .content-area {
+    color: #F9FAFA;
     display: flex;
-    justify-content: center;
+    max-width: 80%;
+    margin: auto;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 5rem;
 }
 
 .headepage-left {
-    width: 40%;
+    width: 45%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -33,7 +46,6 @@
     padding-top: 2rem;
 }
 
-
 .headepage-left button {
     background-color: #DB4B6A;
     color: white;
@@ -45,24 +57,120 @@
 }
 
 .headepage-left button:last-child {
-    background-color: black;
+    background-color: #393942;
     color: white;
     border: 1px solid white;
 }
 
 .headepage-left button:hover {
-    background-color: #C89486;
+    background-color: #95BFC4;
     transition: all 0.3s ease-in-out;
 }
 
 .headepage-right {
-    width: 50%;
+    width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .headepage-right img {
-    width: 100%;
-    height: 100%;
+    width: 500px;
+}
+
+/* Media Queries para responsividade */
+
+/* Tablets e telas médias */
+@media screen and (max-width: 1024px) {
+    .headepage-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .headepage-left p {
+        font-size: 1rem;
+    }
+
+    .headepage-left button {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+}
+
+/* Tablets menores e telas médias */
+@media screen and (max-width: 768px) {
+    .Headpage .content-area {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .headepage-left,
+    .headepage-right {
+        width: 100%;
+    }
+
+    .headepage-left {
+        align-items: center;
+    }
+
+    .headepage-right img {
+        max-width: 80%;
+    }
+
+    .headepage-buttons-area {
+        justify-content: center;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    .Headpage {
+        padding: 1rem 0;
+    }
+
+    .Headpage .content-area {
+        max-width: 90%;
+        margin-bottom: 3rem;
+    }
+
+    .headepage-left h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .headepage-left p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .headepage-buttons-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .headepage-left button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .headepage-right img {
+        max-width: 100%;
+    }
+}
+
+/* Para telas muito pequenas */
+@media screen and (max-width: 320px) {
+    .headepage-left h1 {
+        font-size: 1.5rem;
+    }
+
+    .headepage-left p {
+        font-size: 0.8rem;
+    }
+
+    .headepage-left button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
 }
