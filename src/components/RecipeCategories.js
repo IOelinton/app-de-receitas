@@ -9,8 +9,7 @@ export const RecipeCategories = () => {
   const navigate = useNavigate();
 
   const [categories, setCategories] = useState([]);
-  const [recipes, setRecipes] = useState([]);
-  const [recipe, setRecipe] = useState([]);
+  const [recipes, setRecipes] = useState([""]);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,6 +32,21 @@ export const RecipeCategories = () => {
     }
   };
 
+  const getRecipesInitial = async (e) => {
+    const BASE_URL_RECIPES = `https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegan`;
+    try {
+      const response = await fetch(BASE_URL_RECIPES);
+      if (!response.ok) {
+        throw new Error(`Erro: ${response.status}`);
+      }
+      const data = await response.json();
+      setRecipes(data.meals);
+      // console.log(data.meals);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   const getRecipes = async (e) => {
     const BASE_URL_RECIPES = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${e.target.id}`;
     try {
@@ -44,7 +58,7 @@ export const RecipeCategories = () => {
 
       const data = await response.json();
       setRecipes(data.meals);
-      // console.log(data.meals);
+      console.log(e.target.id);
     } catch (err) {
       setError(err.message);
     }
@@ -62,6 +76,7 @@ export const RecipeCategories = () => {
 
   useEffect(() => {
     fetchCatergories();
+    getRecipesInitial();
   }, []);
 
   const responsive = {
@@ -84,7 +99,7 @@ export const RecipeCategories = () => {
   };
 
   if (loading) {
-    return <div>Carregando...</div>;
+    return <div>loading...</div>;
   }
   if (error) {
     return <div>{error}</div>;
@@ -93,12 +108,11 @@ export const RecipeCategories = () => {
   return (
     <div className="recipe-categories">
       <div className="recipe-search__container">
+        <h3 className="recipe-search__container__title">◃Pick A Category▹</h3>
         <div className="recipe_search__categories">
           <Carousel
             responsive={responsive}
             infinite={true}
-            autoPlay={true}
-            autoPlaySpeed={3000}
             keyBoardControl={true}
             customTransition="transform 500ms ease-in-out"
             transitionDuration={500}
@@ -129,6 +143,7 @@ export const RecipeCategories = () => {
           </Carousel>
         </div>
         <div className="recipes_area">
+          <h3 className="recipes_area__title">Recepes</h3>
           <div className="recipes_area__container">
             {recipes.map((recipe) => (
               <>

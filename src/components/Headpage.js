@@ -6,14 +6,14 @@ export default function Headpage() {
       <div className="content-area">
         <div className="headepage-left">
           <h1>
-            Todo Dia Uma Nova <span className="important-word">Receita</span>
+            Every day a new <span className="important-word">Recipe</span>
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             voluptatum, quod, quas, quia, quibusdam quidem quae, quia.
           </p>
           <div className="headpage-buttons-area">
-            <button>Receita Aleatoria</button>
+            <button>Random Recipe</button>
             <button>Lorem Ipson</button>
           </div>
         </div>

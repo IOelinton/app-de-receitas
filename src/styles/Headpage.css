@@ -3,7 +3,7 @@
 .Headpage {
     font-family: "Outfit", serif;
     background-color: #393942;
-    padding: 1rem 0;
+    padding-top: 1.5rem;
 }
 
 .important-word {
@@ -13,9 +13,9 @@
 .Headpage .content-area {
     color: #F9FAFA;
     display: flex;
-    max-width: 80%;
+    max-width: 65%;
     margin: auto;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 5rem;
 }
@@ -63,19 +63,19 @@
 }
 
 .headepage-left button:hover {
-    background-color: #95BFC4;
+    transform: scale(1.05);
     transition: all 0.3s ease-in-out;
 }
 
 .headepage-right {
     width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .headepage-right img {
     width: 500px;
+    position: relative;
+    transform: scale(1.5)rotate(10deg);
 }
 
 /* Media Queries para responsividade */

@@ -4,6 +4,7 @@ import Headpage from "./components/Headpage";
 import { RecipeCategories } from "./components/RecipeCategories";
 import "./index.css";
 import Recipe from "./pages/recipe";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             path="/"
             element={
               <>
+                <Header />
                 <Headpage /> <RecipeCategories />
               </>
             }
