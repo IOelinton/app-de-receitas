@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/recipe.css";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -41,14 +42,59 @@ export default function Recipe() {
   }
   return (
     <div>
-      <h1>Recipe</h1>
-      <p>Nome da receita: {recipeName}</p>
       {recipe && recipe.length > 0 && (
-        <div>
-          <h2>{recipe[0].strMeal}</h2>
-          <img src={recipe[0].strMealThumb} alt={recipe[0].strMeal} />
-          <h3>Instruções:</h3>
-          <p>{recipe[0].strInstructions}</p>
+        <div className="recipe-container">
+          <div className="title-area">
+            <h2>{recipe[0].strMeal}</h2>
+            <h3>Origin: {recipe[0].strArea}</h3>
+          </div>
+          <img
+            className="recipe-img"
+            src={recipe[0].strMealThumb}
+            alt={recipe[0].strMeal}
+          />
+          <div className="recipe-container__ingredients">
+            <div className="ingredients">
+              <h3>Ingredients</h3>
+              <ul>
+                {Object.keys(recipe[0])
+                  .filter(
+                    (key) => key.startsWith("strIngredient") && recipe[0][key]
+                  )
+                  .map((key) => (
+                    <li key={key}>
+                      <label>
+                        <input type="checkbox" />
+                        {recipe[0][key]} -{" "}
+                        {recipe[0][key.replace("strIngredient", "strMeasure")]}"
+                      </label>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div className="divisor"></div>
+
+            <div className="directions">
+              <h3>Instructions</h3>
+              <p>{recipe[0].strInstructions}</p>
+            </div>
+          </div>
+          <div className="references">
+            <h3>References:</h3>
+            <ul>
+              {recipe[0].strYoutube && (
+                <li>
+                  <a
+                    href={recipe[0].strYoutube}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {recipe[0].strYoutube}
+                  </a>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
       )}
     </div>

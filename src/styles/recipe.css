@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.recipe-container {
+    width: 60%;
+    margin: auto;
+    padding-top: 2rem;
+}
+
+.title-area {
+    padding: 1rem 0;
+}
+
+.title-area h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.title-area h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.recipe-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.recipe-container__ingredients {
+    display: flex;
+    width: 100%;
+    padding: 2rem 0;
+    justify-content: space-between;
+
+    text-align: justify;
+}
+
+.recipe-container__ingredients .ingredients {
+    border-right: 1.5px solid black;
+    padding-right: 2rem;
+}
+
+.recipe-container__ingredients .ingredients li {
+    list-style: none;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.recipe-container__ingredients .ingredients input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.recipe-container__ingredients .ingredients input[type="checkbox"]:checked {
+    accent-color: #DB4B6A;
+}
+
+.recipe-container__ingredients .ingredients input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+
+.recipe-container__ingredients .ingredients h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 2rem;
+}
+
+.recipe-container__ingredients .directions {
+    width: 60%;
+    padding-left: 2rem;
+}
+
+.recipe-container__ingredients .directions h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 2rem;
+}
+
+.recipe-container__ingredients .directions p {
+    font-size: 1.1rem;
+    padding-bottom: 2rem;
+}
+
+.references {
+    padding: 2rem 0;
+    text-align: end;
+}
+
+.references h3 {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #DB4B6A;
+}

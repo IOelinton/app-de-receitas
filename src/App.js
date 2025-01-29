@@ -5,7 +5,7 @@ import { RecipeCategories } from "./components/RecipeCategories";
 import "./index.css";
 import Recipe from "./pages/recipe";
 import Header from "./components/Header";
-
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -17,10 +17,20 @@ function App() {
               <>
                 <Header />
                 <Headpage /> <RecipeCategories />
+                <Footer />
               </>
             }
           />
-          <Route path="/recipe" element={<Recipe />} />
+          <Route
+            path="/recipe"
+            element={
+              <>
+                <Header />
+                <Recipe />
+                <Footer />
+              </>
+            }
+          />
         </Routes>
       </Router>
     </>

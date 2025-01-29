@@ -96,6 +96,15 @@
 
 /* lista de receitas */
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Outfit", serif;
+}
+
 .recipes_area {
     background-color: #393942;
     min-height: 100px;

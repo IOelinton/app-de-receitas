@@ -99,7 +99,7 @@ export const RecipeCategories = () => {
   };
 
   if (loading) {
-    return <div>loading...</div>;
+    return <div className="loading">loading...</div>;
   }
   if (error) {
     return <div>{error}</div>;
@@ -143,7 +143,7 @@ export const RecipeCategories = () => {
           </Carousel>
         </div>
         <div className="recipes_area">
-          <h3 className="recipes_area__title">Recepes</h3>
+          <h3 className="recipes_area__title">Recipes</h3>
           <div className="recipes_area__container">
             {recipes.map((recipe) => (
               <>
