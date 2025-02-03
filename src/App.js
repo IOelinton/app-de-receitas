@@ -9,6 +9,7 @@ import Recipe from "./pages/recipe";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RecipeCard from "./components/RecipeCard";
+import RecipesByIgredients from "./pages/recipesByIgredients";
 function App() {
   return (
     <>
@@ -32,6 +33,16 @@ function App() {
               <>
                 <Header />
                 <Recipe />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/RecipesByIgredients"
+            element={
+              <>
+                <Header />
+                <RecipesByIgredients />
                 <Footer />
               </>
             }

@@ -164,7 +164,7 @@
 
 @media screen and (min-width: 835px) and (max-width: 1367px) {
     .categories-card {
-        transform: scale(0.7);
+        transform: scale(0.75);
         margin-bottom: 0rem;
     }
 
@@ -174,13 +174,13 @@
 
 }
 
-@media screen and (min-width: 428px) and (max-width: 835px) {
+@media screen and (min-width: 429px) and (max-width: 834px) {
     .categories-card {
         transform: scale(0.9);
         margin-bottom: 0rem;
     }
 
-    .categories-card.categories-card:hover {
-        transform: scale(1);
+    .recipes_area__card {
+        width: 40%;
     }
 }
