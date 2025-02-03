@@ -15,17 +15,22 @@ header {
 }
 
 .logo {
-    font-size: 2rem;
-    color: #DB4B6A;
-    font-weight: 700;
-    color: #fff;
+    background-color: white;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo h1:hover {
-    color: #DB4B6A;
+.logo:hover {
     cursor: pointer;
+}
 
-    transition: all 0.3s ease-in-out;
+.logo img {
+    width: 100%;
+    object-fit: cover;
 }
 
 

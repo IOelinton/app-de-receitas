@@ -3,6 +3,8 @@ import "../styles/Header.css";
 import search from "../icons/search.png";
 import { useNavigate } from "react-router-dom";
 
+import chefhat from "../icons/cook-hat.png";
+
 export default function Header() {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState(""); // Novo estado para o input
@@ -31,7 +33,7 @@ export default function Header() {
   return (
     <header>
       <div className="logo" onClick={handleRedirect}>
-        <h1>Logo.</h1>
+        <img src={chefhat} alt="chef hat" />
       </div>
       <div className="Search-bar">
         <input

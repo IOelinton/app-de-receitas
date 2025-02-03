@@ -1,10 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/recipesByIgredients.css";
 
 export default function RecipesByIgredients() {
+  const navigate = useNavigate();
   const location = useLocation();
   const Igredient = location.state?.data;
 
@@ -34,13 +36,16 @@ export default function RecipesByIgredients() {
     }
   }, [Igredient]);
 
-  if (loading) {
-    return <div>loading...</div>;
-  }
+  const handleRedirect = (e) => {
+    const myRecipe = e.target.id;
+    console.log(myRecipe);
+    navigate("/recipe", {
+      state: {
+        myRecipe,
+      },
+    });
+  };
 
-  if (error) {
-    return <div>Erro: {error}</div>;
-  }
   return (
     <div className="container-recipesbyigredients">
       <h1>Recipes By Ingredients:</h1>
@@ -53,8 +58,13 @@ export default function RecipesByIgredients() {
                 alt={recipe.strMeal}
                 className="recipes_area__card__img"
                 id={recipe.strMeal}
+                onClick={handleRedirect}
               />
-              <h3 className="recipes_area__card__title" id={recipe.strMeal}>
+              <h3
+                className="recipes_area__card__title"
+                id={recipe.strMeal}
+                onClick={handleRedirect}
+              >
                 {recipe.strMeal}
               </h3>
             </div>

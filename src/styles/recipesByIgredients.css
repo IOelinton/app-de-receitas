@@ -28,3 +28,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.recipes_area__card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease-in-out;
+}
