@@ -17,7 +17,6 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5rem;
 }
 
 .headepage-left {
@@ -56,12 +55,6 @@
     font-size: 1.2rem;
 }
 
-.headepage-left button:last-child {
-    background-color: #393942;
-    color: white;
-    border: 1px solid white;
-}
-
 .headepage-left button:hover {
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
@@ -75,13 +68,28 @@
 .headepage-right img {
     width: 500px;
     position: relative;
-    transform: scale(1.5)rotate(10deg);
+    transform: scale(1.4)rotate(10deg);
 }
 
-/* Media Queries para responsividade */
 
-/* Tablets e telas médias */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 835px) {
+    .Headpage .content-area {
+        padding-bottom: 2rem;
+    }
+
+    .headepage-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .headepage-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 428px) {
     .headepage-left h1 {
         font-size: 2.5rem;
     }
@@ -90,87 +98,16 @@
         font-size: 1rem;
     }
 
+    .headpage-buttons-area {
+        padding: 0.5rem 0;
+    }
+
     .headepage-left button {
         font-size: 1rem;
         padding: 0.8rem 1.2rem;
     }
-}
-
-/* Tablets menores e telas médias */
-@media screen and (max-width: 768px) {
-    .Headpage .content-area {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .headepage-left,
-    .headepage-right {
-        width: 100%;
-    }
-
-    .headepage-left {
-        align-items: center;
-    }
-
-    .headepage-right img {
-        max-width: 80%;
-    }
-
-    .headepage-buttons-area {
-        justify-content: center;
-    }
-}
-
-/* Smartphones */
-@media screen and (max-width: 480px) {
-    .Headpage {
-        padding: 1rem 0;
-    }
 
     .Headpage .content-area {
-        max-width: 90%;
-        margin-bottom: 3rem;
-    }
-
-    .headepage-left h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .headepage-left p {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-
-    .headepage-buttons-area {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .headepage-left button {
-        width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-
-    .headepage-right img {
-        max-width: 100%;
-    }
-}
-
-/* Para telas muito pequenas */
-@media screen and (max-width: 320px) {
-    .headepage-left h1 {
-        font-size: 1.5rem;
-    }
-
-    .headepage-left p {
-        font-size: 0.8rem;
-    }
-
-    .headepage-left button {
-        padding: 0.6rem;
-        font-size: 0.9rem;
+        padding-bottom: 1rem;
     }
 }

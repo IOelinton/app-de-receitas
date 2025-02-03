@@ -2,10 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Headpage from "./components/Headpage";
 import { RecipeCategories } from "./components/RecipeCategories";
+
 import "./index.css";
+import "./styles/App.css";
 import Recipe from "./pages/recipe";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import RecipeCard from "./components/RecipeCard";
 function App() {
   return (
     <>
@@ -16,7 +19,9 @@ function App() {
             element={
               <>
                 <Header />
-                <Headpage /> <RecipeCategories />
+                <Headpage />
+                <RecipeCard />
+                <RecipeCategories />
                 <Footer />
               </>
             }

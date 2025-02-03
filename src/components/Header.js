@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header>
       <div className="logo" onClick={handleRedirect2}>
-        Logo.
+        <h1>Logo.</h1>
       </div>
       <div className="Search-bar">
         <input type="text" placeholder="Search With An Igredient" />

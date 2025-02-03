@@ -5,24 +5,29 @@
 }
 
 header {
-    padding: 1rem;
+    padding: 1rem 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #000;
     color: #fff;
-
 }
 
 .logo {
     font-size: 2rem;
+    color: #DB4B6A;
     font-weight: 700;
+    color: #fff;
 }
 
-.logo:hover {
+.logo h1:hover {
+    color: #DB4B6A;
     cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
 }
+
 
 .Search-bar {
     display: flex;
@@ -54,4 +59,10 @@ header {
 .Search-bar button img {
     width: 50%;
     object-fit: contain;
+}
+
+@media screen and (max-width: 835px) {
+    .Search-bar input {
+        width: 12rem;
+    }
 }

@@ -5,28 +5,42 @@ import { useState, useEffect } from "react";
 
 export default function Recipe() {
   const location = useLocation();
-  const recipeName = location.state?.myRecipe; // Corrigido para acessar myRecipe
+  const recipeName = location.state?.myRecipe;
 
-  // Descomentando e ajustando a função getRecipe para usar o recipeName
   const [recipe, setRecipe] = useState([]);
   const [error, setError] = useState(null);
 
   const getRecipe = async () => {
-    const BASE_URL_RECIPE = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
-    try {
-      const response = await fetch(BASE_URL_RECIPE);
-      if (!response.ok) {
-        throw new Error(`Erro: ${response.status}`);
+    if (recipeName === "randoom") {
+      const BASE_URL_RECIPE =
+        "https://www.themealdb.com/api/json/v1/1/random.php";
+      try {
+        const response = await fetch(BASE_URL_RECIPE);
+        if (!response.ok) {
+          throw new Error(`Erro: ${response.status}`);
+        }
+        const data = await response.json();
+        setRecipe(data.meals);
+        console.log(data.meals);
+      } catch (err) {
+        setError(err.message);
       }
-      const data = await response.json();
-      setRecipe(data.meals);
-      console.log(data.meals);
-    } catch (err) {
-      setError(err.message);
+    } else {
+      const BASE_URL_RECIPE = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
+      try {
+        const response = await fetch(BASE_URL_RECIPE);
+        if (!response.ok) {
+          throw new Error(`Erro: ${response.status}`);
+        }
+        const data = await response.json();
+        setRecipe(data.meals);
+        console.log(data.meals);
+      } catch (err) {
+        setError(err.message);
+      }
     }
   };
 
-  // Usando useEffect para carregar a receita quando o componente montar
   React.useEffect(() => {
     if (recipeName) {
       getRecipe();
