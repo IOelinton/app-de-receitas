@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/Headpage.css";
 import { useNavigate } from "react-router-dom";
 
+import sanduiche from "../imgs/sanduiche.png";
+
 export default function Headpage() {
   const navigate = useNavigate();
   const handleRedirect = (e) => {
@@ -33,7 +35,7 @@ export default function Headpage() {
           </div>
         </div>
         <div className="headepage-right">
-          <img src="/sanduiche.png" alt="hamburger" />
+          <img src={sanduiche} alt="hamburger" />
         </div>
       </div>
     </div>
