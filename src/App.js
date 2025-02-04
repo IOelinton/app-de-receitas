@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Headpage from "./components/Headpage";
 import { RecipeCategories } from "./components/RecipeCategories";
@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RecipeCard from "./components/RecipeCard";
 import RecipesByIgredients from "./pages/recipesByIgredients";
+
 function App() {
   return (
     <>
