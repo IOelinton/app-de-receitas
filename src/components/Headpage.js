@@ -35,7 +35,7 @@ export default function Headpage() {
           </div>
         </div>
         <div className="headepage-right">
-          <img src={sanduiche} alt="hamburger" />
+          <img src={sanduiche} alt="Sanduiche" />
         </div>
       </div>
     </div>
