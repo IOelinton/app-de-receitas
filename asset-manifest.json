@@ -1,19 +1,20 @@
 {
   "files": {
     "main.css": "/app-de-receitas/static/css/main.b3c96f4f.css",
-    "main.js": "/app-de-receitas/static/js/main.5d2ae46d.js",
+    "main.js": "/app-de-receitas/static/js/main.b0230558.js",
     "static/js/488.b0481da7.chunk.js": "/app-de-receitas/static/js/488.b0481da7.chunk.js",
+    "static/media/sanduiche.png": "/app-de-receitas/static/media/sanduiche.dfd55677730c87c67806.png",
     "static/media/cook-hat.png": "/app-de-receitas/static/media/cook-hat.bd12255c1a92e97ad942.png",
     "static/media/revicons.eot": "/app-de-receitas/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/app-de-receitas/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/app-de-receitas/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/app-de-receitas/index.html",
     "main.b3c96f4f.css.map": "/app-de-receitas/static/css/main.b3c96f4f.css.map",
-    "main.5d2ae46d.js.map": "/app-de-receitas/static/js/main.5d2ae46d.js.map",
+    "main.b0230558.js.map": "/app-de-receitas/static/js/main.b0230558.js.map",
     "488.b0481da7.chunk.js.map": "/app-de-receitas/static/js/488.b0481da7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b3c96f4f.css",
-    "static/js/main.5d2ae46d.js"
+    "static/js/main.b0230558.js"
   ]
 }
