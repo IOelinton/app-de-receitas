@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,10 +19,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Clean Install Dependencies
+        run: |
+          npm cache clean --force
+          npm ci
+
+      - name: Clean Build Directory
+        if: runner.os == 'Windows'
+        run: if exist build rmdir /s /q build
+        shell: cmd
+
+      - name: Clean Build Directory (Unix)
+        if: runner.os != 'Windows'
+        run: rm -rf build
+        shell: bash
 
       - name: Build
         run: npm run build
@@ -30,4 +45,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build
-          token: ${{ secrets.PAT_TOKEN }}
+          clean: true
+          force: true
