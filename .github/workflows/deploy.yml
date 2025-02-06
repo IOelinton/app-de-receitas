@@ -22,20 +22,9 @@ jobs:
           node-version: "18"
 
       - name: Clean Install Dependencies
-        run: |
-          npm cache clean --force
-          npm ci
-
+        run: npm ci
       - name: Clean Build Directory
-        if: runner.os == 'Windows'
-        run: if exist build rmdir /s /q build
-        shell: cmd
-
-      - name: Clean Build Directory (Unix)
-        if: runner.os != 'Windows'
         run: rm -rf build
-        shell: bash
-
       - name: Build
         run: npm run build
         env:
