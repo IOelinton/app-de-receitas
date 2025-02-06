@@ -16,14 +16,19 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 1. Clone o repositório
 ```bash
-git clone git@github.com:IOelinton/Gerador-de-senhas.git
-cd recipe-finder
+git clone git@github.com:IOelinton/app-de-receitas.git
+cd app-de-receitas
+```
 
 2. Instale as dependências
+```bash
 npm install
+```
 
 3. Inicie o servidor de desenvolvimento
+```bash
 npm start
+```
 
 A aplicação estará acessível em http://localhost:3000.
 
